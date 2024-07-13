@@ -7,7 +7,7 @@ const router = createBrowserRouter([
         element: <h1 className="flex justify-center py-10 text-4xl">Hello RockDay Challenge</h1>
     },
     {
-        path: "/navbar",
+        path: "/navbar-search",
         element: <NavbarSearch />
     }
 ])
