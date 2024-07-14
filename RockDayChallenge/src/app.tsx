@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { NavbarSearch } from "./pages/navbar-search";
 import { Rocket } from "lucide-react"
+import { Navbar } from "./pages/navbar";
 
 const router = createBrowserRouter([
     {
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
     {
         path: "/navbar",
         element: <NavbarSearch />
+    },
+    {
+        path: "/aside-navbar",
+        element: <Navbar/>
     }
 ])
 
