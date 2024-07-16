@@ -3,7 +3,7 @@ import { Calendar, Map, SearchIcon } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 import { NavbarRegisterResponse } from '../../components/navbar/NavbarRegisterResponse';
 
-export function NavbarNew() {
+export function NavbarNew(props : any) {
     const [isSaving, setIsSaving] = useState(false)
     const [showResult, setShowResult] = useState(false)
     const [isSuccess, setIsSuccess] = useState(true)
@@ -19,7 +19,7 @@ export function NavbarNew() {
     };
 
     return (
-        <div className="w-full bg-transparent min-h-screen border-r border-[#1F1F1F] sm:w-96">
+        <div style={{ display: props.isVisible ? 'block' : 'none' }} className="w-full bg-transparent min-h-screen border-r border-[#1F1F1F] sm:w-96">
             {showResult ? (
                 <NavbarRegisterResponse
                     isSuccess={isSuccess} />
