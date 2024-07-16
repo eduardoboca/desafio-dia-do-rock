@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { NavbarSearch } from "./pages/navbar-search";
 import { Rocket } from "lucide-react";
-import { Navbar } from "./pages/navbar";
-import { NavbarNew } from "./pages/navbar-new";
-import { NavbarRegisterResponse } from "./components/navbar/NavbarRegisterResponse";
+import { Navbar } from "./components/navbar";
+import { NavbarRegisterResponse } from "./components/navbar-new-response/NavbarRegisterResponse";
+import { NavbarSearch } from "./components/navbar-search";
+import { NavbarNew } from "./components/navbar-new";
 
 const router = createBrowserRouter([
   {

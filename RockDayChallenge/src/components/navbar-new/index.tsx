@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Calendar, Map, SearchIcon } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
-import { NavbarRegisterResponse } from '../../components/navbar/NavbarRegisterResponse';
+import { NavbarRegisterResponse } from '../../components/navbar-new-response/NavbarRegisterResponse';
 
 export function NavbarNew() {
     const [isSaving, setIsSaving] = useState(false)
