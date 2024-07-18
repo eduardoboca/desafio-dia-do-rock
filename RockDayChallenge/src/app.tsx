@@ -1,20 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Rocket } from "lucide-react";
 import { Navbar } from "./components/navbar";
 import { NavbarRegisterResponse } from "./components/navbar-new-response/NavbarRegisterResponse";
 import { NavbarSearch } from "./components/navbar-search";
 import { NavbarNew } from "./components/navbar-new";
+import { Home } from "./pages/home";
+import MainPage from "./teste";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <h1 className="flex justify-center py-10 text-4xl gap-5">
-        <Rocket />
-        Hello RockDay Challenge
-        <Rocket />
-      </h1>
-    ),
+    element: <Home />
   },
   {
     path: "/navbar-search",
@@ -22,16 +17,24 @@ const router = createBrowserRouter([
   },
   {
     path: "/aside-navbar",
-    element: <Navbar />,
+    element: <Navbar isExpanded = {false} />,
   },
   {
     path: "/navbar-new",
     element: <NavbarNew />,
   },
+
   {
     path: "/navbar-register-response",
-    element: <NavbarRegisterResponse isSuccess={true} />,
+    element: <NavbarRegisterResponse isSuccess={true} onClose={function (): void {
+      throw new Error("Function not implemented.");
+    } } />,
   },
+
+  {
+    path: "/teste",
+    element: <MainPage />
+  }
 ]);
 
 export function App() {
