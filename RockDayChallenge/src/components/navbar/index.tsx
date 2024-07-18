@@ -3,7 +3,11 @@ import { Plus, Map, Search } from 'lucide-react';
 import { NavbarSearch } from '../navbar-search/index';
 import { NavbarNew } from '../navbar-new';
 
-export function Navbar({ onExpand }) {
+interface NavbarProps {
+  onExpand : () => void
+};
+
+export function Navbar({ onExpand } : NavbarProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
   const [isNewBarActive, setIsNewBarActive] = useState(false);

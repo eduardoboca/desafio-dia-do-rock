@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Calendar, Map, Search } from "lucide-react";
 import { NavbarRegisterResponse } from '../../components/navbar-new-response/NavbarRegisterResponse';
 
