@@ -4,7 +4,6 @@ import { NavbarRegisterResponse } from "./components/navbar-new-response/NavbarR
 import { NavbarSearch } from "./components/navbar-search";
 import { NavbarNew } from "./components/navbar-new";
 import { Home } from "./pages/home";
-import MainPage from "./teste";
 
 const router = createBrowserRouter([
   {
