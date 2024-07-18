@@ -13,11 +13,11 @@ export function NavbarNew() {
     const [errors, setErrors] = useState<string[]>([]);
     const [events, setEvents] = useState([]);
 
-    useEffect(() => {
-        const storedEventsString = localStorage.getItem('events');
-        const storedEvents = storedEventsString ? JSON.parse(storedEventsString) : [];
-        setEvents(storedEvents);
-    }, []);
+    // useEffect(() => {
+    //     const storedEventsString = localStorage.getItem('events');
+    //     const storedEvents = storedEventsString ? JSON.parse(storedEventsString) : [];
+    //     setEvents(storedEvents);
+    // }, []);
 
     const save = () => {
         const newErrors = [];
