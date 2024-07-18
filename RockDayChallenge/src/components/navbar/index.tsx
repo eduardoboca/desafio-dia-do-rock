@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { Plus, Map, Search } from 'lucide-react';
 import { NavbarSearch } from '../navbar-search/index';
 import { NavbarNew } from '../navbar-new';

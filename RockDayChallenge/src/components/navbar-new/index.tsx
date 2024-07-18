@@ -11,13 +11,13 @@ export function NavbarNew() {
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
     const [errors, setErrors] = useState<string[]>([]);
-    const [events, setEvents] = useState([]);
+    // const [events, setEvents] = useState([]);
 
-    useEffect(() => {
-        const storedEventsString = localStorage.getItem('events');
-        const storedEvents = storedEventsString ? JSON.parse(storedEventsString) : [];
-        setEvents(storedEvents);
-    }, []);
+    // useEffect(() => {
+    //     const storedEventsString = localStorage.getItem('events');
+    //     const storedEvents = storedEventsString ? JSON.parse(storedEventsString) : [];
+    //     setEvents(storedEvents);
+    // }, []);
 
     const save = () => {
         const newErrors = [];
@@ -34,20 +34,20 @@ export function NavbarNew() {
             setTimeout(() => {
                 const success = Math.random() < 0.5;
                 if (success) {
-                    const newEvent = {
-                        id: events.length + 1,
-                        imgSrc: "public/band01.png",
-                        alt: "band01",
-                        band: band,
-                        venue: location,
-                        address: "R. Tagipuru, 795 - Barra Funda",
-                        city: "São Paulo - SP",
-                        time: date
-                    };
+                    // const newEvent = {
+                    //     id: events.length + 1,
+                    //     imgSrc: "public/band01.png",
+                    //     alt: "band01",
+                    //     band: band,
+                    //     venue: location,
+                    //     address: "R. Tagipuru, 795 - Barra Funda",
+                    //     city: "São Paulo - SP",
+                    //     time: date
+                    // };
 
-                    const updatedEvents = [...events, newEvent];
-                    setEvents(updatedEvents);
-                    localStorage.setItem('events', JSON.stringify(updatedEvents));
+                    // const updatedEvents = [...events, newEvent];
+                    // setEvents(updatedEvents);
+                    // localStorage.setItem('events', JSON.stringify(updatedEvents));
                 }
                 setIsSuccess(success);
                 setShowResult(true);
