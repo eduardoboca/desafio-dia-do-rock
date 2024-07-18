@@ -64,9 +64,9 @@ export function NavbarNew() {
     };
 
     return (
-        <div className="w-full bg-transparent min-h-screen border-r border-[#1F1F1F] sm:w-96">
+        <div className="w-full bg-transparent border-r border-[#1F1F1F] sm:w-96">
             {showResult ? (
-                <NavbarRegisterResponse isSuccess={isSuccess} onClose={handleClose}/>
+                <NavbarRegisterResponse isSuccess={isSuccess} onClose={handleClose} />
             ) : (
                 <div>
                     <div className="px-5 mt-9">

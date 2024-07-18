@@ -17,7 +17,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/aside-navbar",
-    element: <Navbar isExpanded = {false} />,
+    element: <Navbar isExpanded={false} />,
   },
   {
     path: "/navbar-new",
@@ -28,13 +28,8 @@ const router = createBrowserRouter([
     path: "/navbar-register-response",
     element: <NavbarRegisterResponse isSuccess={true} onClose={function (): void {
       throw new Error("Function not implemented.");
-    } } />,
+    }} />,
   },
-
-  {
-    path: "/teste",
-    element: <MainPage />
-  }
 ]);
 
 export function App() {

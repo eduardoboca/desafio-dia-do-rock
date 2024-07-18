@@ -8,19 +8,6 @@ export function Navbar({ onExpand }) {
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
   const [isNewBarActive, setIsNewBarActive] = useState(false);
 
-  const searchBarRef = useRef<HTMLDivElement | null>(null);
-  const newBarRef = useRef<HTMLDivElement | null>(null);
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (searchBarRef.current && !searchBarRef.current.contains(event.target as Node) &&
-      newBarRef.current && !newBarRef.current.contains(event.target as Node)) {
-      setIsExpanded(false)
-      onExpand(false)
-      setIsSearchBarActive(false)
-      setIsNewBarActive(false)
-    }
-  }
-
   const initializeEvents = () => {
     const defaultEvents = [
       {
@@ -151,19 +138,6 @@ export function Navbar({ onExpand }) {
     }
   }
 
-  useEffect(() => {
-    initializeEvents()
-    if (isExpanded) {
-      document.addEventListener('mousedown', handleClickOutside)
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isExpanded])
-
   const toggleSearchBar = () => {
     setIsNewBarActive(false)
     setIsSearchBarActive(!isSearchBarActive)
@@ -182,7 +156,7 @@ export function Navbar({ onExpand }) {
     <div className="flex">
       <nav className="fixed top-0 left-0 pt-9 w-16 h-screen dark:bg-[#18171E]">
 
-          <a className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer bg-white">
+        <a className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer bg-white">
           <img className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer" src="../../../public/avatar.png" alt="image" />
           <div className="absolute mt-7 ml-7 bg-green-600 w-4 h-4 flex justify-center items-center rounded-full">
             <span className="text-slate-50 text-xs font-black">✓</span>
@@ -200,13 +174,13 @@ export function Navbar({ onExpand }) {
       </nav>
 
       {isSearchBarActive &&
-        <div ref={searchBarRef} className={"ml-16 ${isExpanded ? 'w-full' : 'w-0'} transition-all duration-300"}>
+        <div className={"ml-16 ${isExpanded ? 'w-full' : 'w-0'} transition-all duration-300"}>
           {isExpanded && <NavbarSearch />}
         </div>
       }
 
       {isNewBarActive &&
-        <div ref={newBarRef} className={"ml-16 ${isExpanded ? 'w-full' : 'w-0'} transition-all duration-300"}>
+        <div className={"ml-16 ${isExpanded ? 'w-full' : 'w-0'} transition-all duration-300"}>
           {isExpanded && <NavbarNew />}
         </div>
       }
