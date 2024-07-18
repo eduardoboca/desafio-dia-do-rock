@@ -19,7 +19,7 @@ export function NavbarRegisterResponse({
     : "Ocorreu uma falha ao tentar submeter seu evento, por favor verifique sua conexão com a internet e tente novamente.";
 
   return (
-    <div className="pt-[128px] px-20 text-center">
+    <div className="pt-[128px] px-[20px] text-center">
       <img src={icon} className="mx-auto mb-[36px]" />
 
       <p className="text-[24px] font-bold mb-[12px]">{statusMessage}</p>
