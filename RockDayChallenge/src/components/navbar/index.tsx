@@ -12,16 +12,21 @@ export function Navbar() {
   const newBarRef = useRef<HTMLDivElement | null>(null);
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (searchBarRef.current && !searchBarRef.current.contains(event.target as Node)) {
+    if (searchBarRef.current && !searchBarRef.current.contains(event.target as Node) &&
+      newBarRef.current && !newBarRef.current.contains(event.target as Node)) {
       setIsExpanded(false);
-    }
-
-    if (newBarRef.current && !newBarRef.current.contains(event.target as Node)) {
-      setIsExpanded(false);
+      setIsSearchBarActive(false);
+      setIsNewBarActive(false);
     }
   };
 
   useEffect(() => {
+    if (isExpanded) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -30,13 +35,13 @@ export function Navbar() {
   const toggleSearchBar = () => {
     setIsNewBarActive(false);
     setIsSearchBarActive(!isSearchBarActive);
-    setIsExpanded(prev => !prev);
+    setIsExpanded(!isSearchBarActive || !isExpanded);
   };
 
   const toggleNewBar = () => {
     setIsSearchBarActive(false);
     setIsNewBarActive(!isNewBarActive);
-    setIsExpanded(prev => !prev);
+    setIsExpanded(!isNewBarActive || !isExpanded);
   };
 
   return (
