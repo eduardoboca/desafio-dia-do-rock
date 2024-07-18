@@ -3,10 +3,12 @@ import errorIcon from "/img-failure.png";
 
 interface NavbarRegisterResponseProps {
   isSuccess: boolean;
+  onClose: () => void;
 }
 
 export function NavbarRegisterResponse({
   isSuccess,
+  onClose,
 }: NavbarRegisterResponseProps) {
   const icon = isSuccess ? successIcon : errorIcon;
   const statusMessage = isSuccess
@@ -26,7 +28,7 @@ export function NavbarRegisterResponse({
         {message}
       </p>
 
-      <button className="bg-[#8625D2] rounded-[8px] w-[335px] h-[60px]">
+      <button onClick={onClose} className="bg-[#8625D2] rounded-[8px] w-[335px] h-[60px]">
         Fechar
       </button>
     </div>
