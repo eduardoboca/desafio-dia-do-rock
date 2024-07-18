@@ -4,6 +4,7 @@ import { Rocket } from "lucide-react";
 import { Navbar } from "./pages/navbar";
 import { NavbarNew } from "./pages/navbar-new";
 import { NavbarRegisterResponse } from "./components/navbar/NavbarRegisterResponse";
+import { Map } from "./components/map-component"
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
     path: "/navbar-register-response",
     element: <NavbarRegisterResponse isSuccess={true} />,
   },
+  
 ]);
 
 export function App() {
