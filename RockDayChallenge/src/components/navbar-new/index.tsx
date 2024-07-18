@@ -1,36 +1,62 @@
-import { useState } from 'react';
-import { Calendar, Map, SearchIcon } from "lucide-react";
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Calendar, Map, Search } from "lucide-react";
 import { NavbarRegisterResponse } from '../../components/navbar-new-response/NavbarRegisterResponse';
 
 export function NavbarNew() {
-    const [isSaving, setIsSaving] = useState(false)
-    const [showResult, setShowResult] = useState(false)
-    const [isSuccess, setIsSuccess] = useState(true)
+    const [isSaving, setIsSaving] = useState(false);
+    const [showResult, setShowResult] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(true);
+
+    const [band, setBand] = useState('');
+    const [date, setDate] = useState('');
+    const [location, setLocation] = useState('');
+    const [errors, setErrors] = useState<string[]>([]);
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        const storedEventsString = localStorage.getItem('events');
+        const storedEvents = storedEventsString ? JSON.parse(storedEventsString) : [];
+
+        setEvents(storedEvents);
+    }, []);
 
     const save = () => {
-        setIsSaving(true)
+        const newErrors = [];
 
-        setTimeout(() => {
-            const randomResult = Math.random() < 0.5
-            setIsSuccess(randomResult)
-            setShowResult(true)
-        }, 2000);
+        if (!band) newErrors.push('O campo Banda é obrigatório.');
+        if (!date) newErrors.push('O campo Data é obrigatório.');
+        if (!location) newErrors.push('O campo Local é obrigatório.');
+
+        if (newErrors.length > 0) {
+            setErrors(newErrors);
+        } else {
+            setIsSaving(true);
+            setErrors([]);
+            setTimeout(() => {
+                const randomResult = Math.random() < 0.5;
+                setIsSuccess(randomResult);
+                setShowResult(true);
+                setIsSaving(false);
+            }, 2000);
+        }
     };
 
     return (
         <div className="w-full bg-transparent min-h-screen border-r border-[#1F1F1F] sm:w-96">
             {showResult ? (
-                <NavbarRegisterResponse
-                    isSuccess={isSuccess} />
-
+                <NavbarRegisterResponse isSuccess={isSuccess} />
             ) : (
                 <div>
                     <div className="px-5 mt-9">
                         <p className="text-[#848487] mb-2">Banda</p>
                         <div className='h-14 px-4 dark:bg-[#18171E] border border-zinc-400 dark:border-zinc-800 rounded-lg flex items-center gap-2'>
-                            <SearchIcon className="size-6 text-[#848487]" />
-                            <input type="text" name='title' placeholder='Iron Maiden'
+                            <Search className="size-6 text-[#848487]" />
+                            <input
+                                type="text"
+                                name='band'
+                                placeholder='Iron Maiden'
+                                value={band}
+                                onChange={(e) => setBand(e.target.value)}
                                 className='bg-transparent placeholder:text-zinc-400 outline-none flex-1'
                             />
                         </div>
@@ -40,17 +66,11 @@ export function NavbarNew() {
                         <p className="text-[#848487] mb-2">Data</p>
                         <div className='h-14 px-4 dark:bg-[#18171E] border border-zinc-400 dark:border-zinc-800 rounded-lg flex items-center gap-2'>
                             <Calendar className="size-6 text-[#848487]" />
-                            <input type="date" name='date' placeholder='15/07/2024'
-                                className='bg-transparent placeholder:text-zinc-400 outline-none flex-1'
-                            />
-                        </div>
-                    </div>
-
-                    <div className="px-5 mt-5">
-                        <p className="text-[#848487] mb-2">Data</p>
-                        <div className='h-14 px-4 dark:bg-[#18171E] border border-zinc-400 dark:border-zinc-800 rounded-lg flex items-center gap-2'>
-                            <Calendar className="size-6 text-[#848487]" />
-                            <input type="date" name='date' placeholder='15/07/2024'
+                            <input
+                                type="date"
+                                name='date'
+                                value={date}
+                                onChange={(e) => setDate(e.target.value)}
                                 className='bg-transparent placeholder:text-zinc-400 outline-none flex-1'
                             />
                         </div>
@@ -60,7 +80,12 @@ export function NavbarNew() {
                         <p className="text-[#848487] mb-2">Local</p>
                         <div className='h-14 px-4 dark:bg-[#18171E] border border-zinc-400 dark:border-zinc-800 rounded-lg flex items-center gap-2'>
                             <Map className="size-6 text-[#848487]" />
-                            <input type="text" name='date' placeholder='Espaço das Américas, SP'
+                            <input
+                                type="text"
+                                name='location'
+                                placeholder='Espaço das Américas, SP'
+                                value={location}
+                                onChange={(e) => setLocation(e.target.value)}
                                 className='bg-transparent placeholder:text-zinc-400 outline-none flex-1'
                             />
                         </div>
@@ -84,6 +109,16 @@ export function NavbarNew() {
                             <p className="text-[#848487]">Aguarde...</p>
                         ) : (
                             <a href='#' className="text-[#848487]">Preciso de ajuda</a>
+                        )}
+                    </div>
+
+                    <div className="px-5 mt-4">
+                        {errors.length > 0 && (
+                            <div className="text-red-500">
+                                {errors.map((error, index) => (
+                                    <p key={index}>{error}</p>
+                                ))}
+                            </div>
                         )}
                     </div>
                 </div>
