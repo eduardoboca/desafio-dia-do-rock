@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Navbar } from "./components/navbar";
 import { NavbarRegisterResponse } from "./components/navbar-new-response/NavbarRegisterResponse";
 import { NavbarSearch } from "./components/navbar-search";
 import { NavbarNew } from "./components/navbar-new";
@@ -13,10 +12,6 @@ const router = createBrowserRouter([
   {
     path: "/navbar-search",
     element: <NavbarSearch />,
-  },
-  {
-    path: "/aside-navbar",
-    element: <Navbar isExpanded={false} />,
   },
   {
     path: "/navbar-new",

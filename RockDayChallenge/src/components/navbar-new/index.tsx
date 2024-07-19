@@ -2,6 +2,17 @@ import { useState } from 'react';
 import { Calendar, Map, Search } from "lucide-react";
 import { NavbarRegisterResponse } from '../../components/navbar-new-response/NavbarRegisterResponse';
 
+interface Event {
+    id: number;
+    imgSrc: string;
+    alt: string;
+    band: string;
+    venue: string;
+    address: string;
+    city: string;
+    time: string;
+}
+
 export function NavbarNew() {
     const [isSaving, setIsSaving] = useState(false);
     const [showResult, setShowResult] = useState(false);
@@ -11,7 +22,7 @@ export function NavbarNew() {
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
     const [errors, setErrors] = useState<string[]>([]);
-    const [events, setEvents] = useState([]);
+    const [events, setEvents] = useState<Event[]>([]);
 
     // useEffect(() => {
     //     const storedEventsString = localStorage.getItem('events');
