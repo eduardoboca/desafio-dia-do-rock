@@ -60,7 +60,7 @@ Desenvolvimento de um layout completo, baseado em um projeto de Figma, para uma 
           <a href="https://www.linkedin.com/in/paulojorgepimenta/" target="_blank">
             <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn">
           </a> 
-          <a href="#" target="_blank">
+          <a href="https://github.com/paulopimenta" target="_blank">
             <img src="https://skillicons.dev/icons?i=github" alt="GitHub">
           </a> 
         </div>
@@ -80,15 +80,15 @@ Desenvolvimento de um layout completo, baseado em um projeto de Figma, para uma 
         </div>
       </td>
       <td align="center">
-        <img src="https://avatars.githubusercontent.com/u/13337819?v=4" width="150" alt="Eduardo Freitas"/>
+        <img src="https://media.licdn.com/dms/image/D4D03AQGWv5wkxvmCyw/profile-displayphoto-shrink_200_200/0/1693825774890?e=1726704000&v=beta&t=julVyq_YAppwUFJ5bFbnnQXvLJmMZGRoTp0C4LSw5F0" width="150" alt="Eduardo Freitas"/>
         <br/>
-        <strong>Eduardo Freitas</strong>
+        <strong>Vitor Gasparete</strong>
         <br/>
         <div style="display: inline-block;">
-          <a href="#" target="_blank">
+          <a href="https://www.linkedin.com/in/vitor-gasparete-95a001187/" target="_blank">
             <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn">
           </a> 
-          <a href="#" target="_blank">
+          <a href="https://github.com/Gasparete" target="_blank">
             <img src="https://skillicons.dev/icons?i=github" alt="GitHub">
           </a> 
         </div>
@@ -108,6 +108,30 @@ Desenvolvimento de um layout completo, baseado em um projeto de Figma, para uma 
 
 Nosso projeto está hospedado dentro da Vercel através do link:
 https://desafio-dia-do-rock.vercel.app/
+
+Para testar o projeto localmente, você pode fazer um clone do repositório. Após baixado, através do terminal, vá até a pasta do projeto e siga o siga os passos a seguir:
+
+1. Entre no diretório RockDayChallenge
+
+```shell
+cd .\RockdayChallenge\
+```
+
+2. Instale as dependências do repositório
+```shell
+npm i
+```
+
+3. Execute o comando para rodar o projeto
+```shell
+npm run dev
+```
+
+4. Abra o seu navegador e na barra de navegação insira o link
+```
+http://localhost:5173/
+```
+
 
 # 💜 Participe
 
