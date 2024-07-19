@@ -30,11 +30,19 @@ export function NavbarNew() {
       setEvents(storedEvents);
   }, []);
 
+  const isValidDate = (dateString: string) => {
+    const date = Date.parse(dateString);
+    return !isNaN(date);
+  };
+
   const save = () => {
     const newErrors = [];
 
     if (!band) newErrors.push("O campo Banda é obrigatório.");
-    if (!date) newErrors.push("O campo Data é obrigatório.");
+    if (!date) 
+      newErrors.push("O campo Data é obrigatório.");
+    else if (!isValidDate(date)) 
+      newErrors.push("O campo Data deve ser uma data válida.");
     if (!location) newErrors.push("O campo Local é obrigatório.");
 
     if (newErrors.length > 0) {
