@@ -26,7 +26,7 @@ export function NavbarRegisterResponse({
         {message}
       </p>
 
-      <button className="bg-[#8625D2] rounded-[8px] w-[335px] h-[60px]">
+      <button className="bg-[#8625D2] rounded-lgbg-[#8625D2] text-white font-semibold w-full min-h-12 rounded-lg hover:bg-[#8625E2]">
         Fechar
       </button>
     </div>

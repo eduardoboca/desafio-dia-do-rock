@@ -131,9 +131,9 @@ export function NavbarSearch(props : any) {
     );
 
     return (
-        <div style={{ display: props.isVisible ? 'block' : 'none' }} className="float-left w-full bg-transparent min-h-screen border-r border-[#1F1F1F] sm:w-96">
-            <div className="px-5 pt-14 mb-7">
-                <p className="text-[#848487]">Buscar um evento</p>
+        <div style={{ display: props.isVisible ? 'block' : 'none' }} className="float-left w-60 bg-transparent min-h-screen border-r border-[#1F1F1F] sm:w-96">
+            <div className="px-5 pt-12 mb-7">
+                <p className="text-[#848487] mb-2">Buscar um evento</p>
                 <div className='h-14 px-4 dark:bg-[#18171E] border border-zinc-400 dark:border-zinc-800 rounded-lg flex items-center gap-2'>
                     <SearchIcon className="size-6 text-[#848487]" />
                     <input type="text" name='title' placeholder='Insira a banda' value={searchQuery}
