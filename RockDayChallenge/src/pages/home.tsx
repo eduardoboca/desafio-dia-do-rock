@@ -1,6 +1,7 @@
 import { Navbar } from "../components/navbar";
 
 export function Home() {
+
   return (
     <div className="flex">
       <Navbar/>

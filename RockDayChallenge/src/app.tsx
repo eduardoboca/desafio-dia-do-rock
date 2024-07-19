@@ -1,10 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Navbar } from "./components/navbar";
 import { NavbarRegisterResponse } from "./components/navbar-new-response/NavbarRegisterResponse";
 import { NavbarSearch } from "./components/navbar-search";
 import { NavbarNew } from "./components/navbar-new";
 import { Home } from "./pages/home";
-import MainPage from "./teste";
 
 const router = createBrowserRouter([
   {
@@ -16,10 +14,6 @@ const router = createBrowserRouter([
     element: <NavbarSearch />,
   },
   {
-    path: "/aside-navbar",
-    element: <Navbar isExpanded = {false} />,
-  },
-  {
     path: "/navbar-new",
     element: <NavbarNew />,
   },
@@ -28,13 +22,8 @@ const router = createBrowserRouter([
     path: "/navbar-register-response",
     element: <NavbarRegisterResponse isSuccess={true} onClose={function (): void {
       throw new Error("Function not implemented.");
-    } } />,
+    }} />,
   },
-
-  {
-    path: "/teste",
-    element: <MainPage />
-  }
 ]);
 
 export function App() {
