@@ -1,10 +1,21 @@
 import { useState } from 'react';
 import { SearchIcon } from "lucide-react";
 
+interface Event {
+    id: number;
+    imgSrc: string;
+    alt: string;
+    band: string;
+    venue: string;
+    address: string;
+    city: string;
+    time: string;
+  }
+
 export function NavbarSearch() {
     const [searchQuery, setSearchQuery] = useState('');
     const storedEventsString = localStorage.getItem('events');
-    const events = storedEventsString ? JSON.parse(storedEventsString) : [];
+    const events : Event[] = storedEventsString ? JSON.parse(storedEventsString) : [];
 
     const filteredEvents = events.filter(event =>
         event.band.toLowerCase().includes(searchQuery.toLowerCase())
