@@ -47,7 +47,7 @@ export function NavbarNew() {
                 if (success) {
                     const newEvent = {
                         id: events.length + 1,
-                        imgSrc: "public/band01.png",
+                        imgSrc: "/band01.png",
                         alt: "band01",
                         band: band,
                         venue: location,

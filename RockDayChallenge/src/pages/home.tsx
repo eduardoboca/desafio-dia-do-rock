@@ -12,7 +12,7 @@ export function Home() {
       <Navbar onExpand={handleNavbarExpand} />
       <div className={`flex-1 ${isExpanded ? 'expanded' : ''}`}>
         <div className="w-full h-screen flex justify-center items-center">
-          <img src="public/mapa.png" alt="Mapa" className="w-full h-full object-cover" />
+          <img src="/mapa.png" alt="Mapa" className="w-full h-full object-cover" />
         </div>
       </div>
     </div>

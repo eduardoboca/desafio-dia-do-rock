@@ -161,7 +161,7 @@ export function Navbar({ onExpand } : NavbarProps) {
       <nav className="fixed top-0 left-0 pt-9 w-16 h-screen dark:bg-[#18171E]">
 
         <a className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer bg-white">
-          <img className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer" src="../../../public/avatar.png" alt="image" />
+          <img className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer" src="/avatar.png" alt="image" />
           <div className="absolute mt-7 ml-7 bg-green-600 w-4 h-4 flex justify-center items-center rounded-full">
             <span className="text-slate-50 text-xs font-black">✓</span>
           </div>

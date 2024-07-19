@@ -6,7 +6,7 @@ export function NavbarSearch() {
     const events = [
         {
             id: 1,
-            imgSrc: "public/band01.png",
+            imgSrc: "/band01.png",
             alt: "band01",
             band: "Iron Maiden",
             venue: "Espaço das Américas",
@@ -16,7 +16,7 @@ export function NavbarSearch() {
         },
         {
             id: 2,
-            imgSrc: "public/band02.png",
+            imgSrc: "/band02.png",
             alt: "band02",
             band: "Iron Maiden",
             venue: "Estádio do Maracanã",
@@ -26,7 +26,7 @@ export function NavbarSearch() {
         },
         {
             id: 3,
-            imgSrc: "public/band03.png",
+            imgSrc: "/band03.png",
             alt: "band03",
             band: "Metallica",
             venue: "Allianz Parque",
@@ -36,7 +36,7 @@ export function NavbarSearch() {
         },
         {
             id: 4,
-            imgSrc: "public/band04.png",
+            imgSrc: "/band04.png",
             alt: "band04",
             band: "AC/DC",
             venue: "Mineirão",
@@ -46,7 +46,7 @@ export function NavbarSearch() {
         },
         {
             id: 5,
-            imgSrc: "public/band05.png",
+            imgSrc: "/band05.png",
             alt: "band05",
             band: "Guns N' Roses",
             venue: "Arena Fonte Nova",
@@ -56,7 +56,7 @@ export function NavbarSearch() {
         },
         {
             id: 6,
-            imgSrc: "public/band06.png",
+            imgSrc: "/band06.png",
             alt: "band06",
             band: "Nirvana",
             venue: "Estádio Beira-Rio",
@@ -66,7 +66,7 @@ export function NavbarSearch() {
         },
         {
             id: 7,
-            imgSrc: "public/band07.png",
+            imgSrc: "/band07.png",
             alt: "band07",
             band: "Queen",
             venue: "Arena Castelão",
@@ -76,7 +76,7 @@ export function NavbarSearch() {
         },
         {
             id: 8,
-            imgSrc: "public/band08.png",
+            imgSrc: "/band08.png",
             alt: "band08",
             band: "Pink Floyd",
             venue: "Arena da Baixada",
@@ -86,7 +86,7 @@ export function NavbarSearch() {
         },
         {
             id: 9,
-            imgSrc: "public/band09.png",
+            imgSrc: "/band09.png",
             alt: "band09",
             band: "The Rolling Stones",
             venue: "Estádio Olímpico",
@@ -96,7 +96,7 @@ export function NavbarSearch() {
         },
         {
             id: 10,
-            imgSrc: "public/band10.png",
+            imgSrc: "/band10.png",
             alt: "band10",
             band: "Foo Fighters",
             venue: "Estádio do Pacaembu",
@@ -106,7 +106,7 @@ export function NavbarSearch() {
         },
         {
             id: 11,
-            imgSrc: "public/band11.png",
+            imgSrc: "/band11.png",
             alt: "band11",
             band: "Led Zeppelin",
             venue: "Ginásio do Ibirapuera",
@@ -116,7 +116,7 @@ export function NavbarSearch() {
         },
         {
             id: 12,
-            imgSrc: "public/band12.png",
+            imgSrc: "/band12.png",
             alt: "band12",
             band: "The Beatles",
             venue: "Maracanãzinho",
