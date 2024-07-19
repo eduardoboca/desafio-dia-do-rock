@@ -1,15 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { NavbarSearch } from "./pages/navbar-search";
-import { Rocket } from "lucide-react";
-import { Navbar } from "./pages/navbar";
 import { NavbarNew } from "./pages/navbar-new";
 import { NavbarRegisterResponse } from "./components/navbar/NavbarRegisterResponse";
-import { Map } from "./components/map-component"
+import Home from "./pages/home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navbar />,
+    element: <Home/>,
   },
   {
     path: "/navbar-search",

@@ -131,7 +131,7 @@ export function NavbarSearch(props : any) {
     );
 
     return (
-        <div style={{ display: props.isVisible ? 'block' : 'none' }} className="w-full bg-transparent min-h-screen border-r border-[#1F1F1F] sm:w-96">
+        <div style={{ display: props.isVisible ? 'block' : 'none' }} className="float-left w-full bg-transparent min-h-screen border-r border-[#1F1F1F] sm:w-96">
             <div className="px-5 pt-14 mb-7">
                 <p className="text-[#848487]">Buscar um evento</p>
                 <div className='h-14 px-4 dark:bg-[#18171E] border border-zinc-400 dark:border-zinc-800 rounded-lg flex items-center gap-2'>

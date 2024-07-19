@@ -19,13 +19,13 @@ export function NavbarNew(props : any) {
     };
 
     return (
-        <div style={{ display: props.isVisible ? 'block' : 'none' }} className="w-full bg-transparent min-h-screen border-r border-[#1F1F1F] sm:w-96">
+        <div style={{ display: props.isVisible ? 'block' : 'none' }} className="float-left w-60 bg-transparent min-h-screen border-r border-[#1F1F1F] sm:w-96">
             {showResult ? (
                 <NavbarRegisterResponse
                     isSuccess={isSuccess} />
 
             ) : (
-                <div>
+                <div className='pt-3'>
                     <div className="px-5 mt-9">
                         <p className="text-[#848487] mb-2">Banda</p>
                         <div className='h-14 px-4 dark:bg-[#18171E] border border-zinc-400 dark:border-zinc-800 rounded-lg flex items-center gap-2'>
