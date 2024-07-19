@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { Plus, Map, Search } from 'lucide-react';
-import { NavbarSearch } from '../navbar-search/index';
-import { NavbarNew } from '../navbar-new';
+import { useState } from "react";
+import { Plus, Map, Search } from "lucide-react";
+import { NavbarSearch } from "../navbar-search/index";
+import { NavbarNew } from "../navbar-new";
 
 interface NavbarProps {
   onExpand: (isExpanded: boolean) => void;
-};
+}
 
-export function Navbar({ onExpand } : NavbarProps) {
+export function Navbar({ onExpand }: NavbarProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
   const [isNewBarActive, setIsNewBarActive] = useState(false);
@@ -143,51 +143,75 @@ export function Navbar({ onExpand } : NavbarProps) {
   // }
 
   const toggleSearchBar = () => {
-    setIsNewBarActive(false)
-    setIsSearchBarActive(!isSearchBarActive)
-    setIsExpanded(!isSearchBarActive || !isExpanded)
+    setIsNewBarActive(false);
+    setIsSearchBarActive(!isSearchBarActive);
+    setIsExpanded(!isSearchBarActive || !isExpanded);
     onExpand(!isSearchBarActive || !isExpanded);
-  }
+  };
 
   const toggleNewBar = () => {
-    setIsSearchBarActive(false)
-    setIsNewBarActive(!isNewBarActive)
-    setIsExpanded(!isNewBarActive || !isExpanded)
+    setIsSearchBarActive(false);
+    setIsNewBarActive(!isNewBarActive);
+    setIsExpanded(!isNewBarActive || !isExpanded);
     onExpand(!isNewBarActive || !isExpanded);
+  };
+
+  const HideAll = () => {
+    setIsSearchBarActive(false);
+    setIsNewBarActive(false);
   };
 
   return (
     <div className="flex">
       <nav className="fixed top-0 left-0 pt-9 w-16 h-screen dark:bg-[#18171E]">
-
-        <a className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer bg-white">
-          <img className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer" src="/avatar.png" alt="image" />
-          <div className="absolute mt-7 ml-7 bg-green-600 w-4 h-4 flex justify-center items-center rounded-full">
+        <div className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer bg-white">
+          <img
+            className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer"
+            src="/avatar.png"
+            alt="image"
+          />
+          <div className="absolute mt-7 ml-7 bg-green-600 w-4 h-4 flex justify-center items-center rounded-full cursor-pointer">
             <span className="text-slate-50 text-xs font-black">✓</span>
           </div>
-        </a>
-        <a className="flex justify-center items-center h-16 hover:bg-zinc-300 dark:hover:bg-[#1A191F]" onClick={toggleSearchBar}>
-          <Search color='#8625d2' className='w-6 h-6' />
-        </a>
-        <a className="flex justify-center items-center h-16 hover:bg-zinc-300 dark:hover:bg-[#1A191F]" href="https:\\www.google.com.br">
-          <Map color='#8625d2' className='w-6 h-6' />
-        </a>
-        <a className="flex justify-center items-center h-16 hover:bg-zinc-300 dark:hover:bg-[#1A191F]" onClick={toggleNewBar}>
-          <Plus color='#8625d2' className='w-6 h-6' />
-        </a>
+        </div>
+
+        <div
+          className="flex justify-center items-center h-16 hover:bg-zinc-300 dark:hover:bg-[#1A191F] cursor-pointer"
+          onClick={toggleSearchBar}
+        >
+          <Search color="#8625d2" className="w-6 h-6" />
+        </div>
+
+        <div className="flex justify-center items-center h-16 hover:bg-zinc-300 dark:hover:bg-[#1A191F] cursor-pointer">
+          <Map color="#8625d2" className="w-6 h-6" onClick={HideAll} />
+        </div>
+
+        <div
+          className="flex justify-center items-center h-16 hover:bg-zinc-300 dark:hover:bg-[#1A191F] cursor-pointer"
+          onClick={toggleNewBar}>
+          <Plus color="#8625d2" className="w-6 h-6" />
+        </div>
       </nav>
 
-      {isSearchBarActive &&
-        <div className={"ml-16 ${isExpanded ? 'w-full' : 'w-0'} transition-all duration-300"}>
+      {isSearchBarActive && (
+        <div
+          className={
+            "ml-16 ${isExpanded ? 'w-full' : 'w-0'} transition-all duration-300"
+          }
+        >
           {isExpanded && <NavbarSearch />}
         </div>
-      }
+      )}
 
-      {isNewBarActive &&
-        <div className={"ml-16 ${isExpanded ? 'w-full' : 'w-0'} transition-all duration-300"}>
+      {isNewBarActive && (
+        <div
+          className={
+            "ml-16 ${isExpanded ? 'w-full' : 'w-0'} transition-all duration-300"
+          }
+        >
           {isExpanded && <NavbarNew />}
         </div>
-      }
+      )}
     </div>
-  )
+  );
 }
