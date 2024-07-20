@@ -83,12 +83,12 @@ export function NavbarNew() {
   };
 
   return (
-    <div className="w-full bg-transparent border-r border-[#1F1F1F] sm:w-96">
+    <div className="w-full bg-transparent border-r  sm:w-96">
       {showResult ? (
         <NavbarRegisterResponse isSuccess={isSuccess} onClose={handleClose} />
       ) : (
         <div>
-          <div className="px-5 mt-9">
+          <div className="px-5 mt-14">
             <p className="text-[#848487] mb-2">Banda</p>
             <div className="h-14 px-4 dark:bg-[#18171E] border border-zinc-400 dark:border-zinc-800 rounded-lg flex items-center gap-2">
               <Search className="size-6 text-[#848487]" />

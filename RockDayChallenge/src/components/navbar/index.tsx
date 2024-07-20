@@ -160,8 +160,8 @@ export function Navbar() {
   };
 
   return (
-    <div className="flex">
-      <nav className="fixed top-0 left-0 pt-9 w-16 h-screen dark:bg-[#18171E]">
+    <div className="float-left">
+      <nav className="mr-0 float-left pt-9  w-16 h-screen dark:bg-[#18171E]">
         <div className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer bg-white">
           <img
             className="flex mx-auto mb-4 w-10 h-10 rounded-full cursor-pointer"
@@ -180,8 +180,9 @@ export function Navbar() {
           <Search color="#8625d2" className="w-6 h-6" />
         </div>
 
-        <div className="flex justify-center items-center h-16 hover:bg-zinc-300 dark:hover:bg-[#1A191F] cursor-pointer">
-          <Map color="#8625d2" className="w-6 h-6" onClick={HideAll} />
+        <div className="flex justify-center items-center h-16 hover:bg-zinc-300 dark:hover:bg-[#1A191F] cursor-pointer"
+             onClick={HideAll}>
+          <Map color="#8625d2" className="w-6 h-6"/>
         </div>
 
         <div

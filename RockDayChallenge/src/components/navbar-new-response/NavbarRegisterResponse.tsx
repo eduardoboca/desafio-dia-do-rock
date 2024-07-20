@@ -28,7 +28,7 @@ export function NavbarRegisterResponse({
         {message}
       </p>
 
-      <button onClick={onClose} className="bg-[#8625D2] rounded-[8px] w-[335px] h-[60px]">
+      <button onClick={onClose} className="bg-[#8625D2] text-white font-semibold rounded-[8px] w-[335px] h-[60px]">
         Fechar
       </button>
     </div>
