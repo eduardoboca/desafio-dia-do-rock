@@ -17,10 +17,6 @@ export function MapComponent() {
       <ChangeView center={center} zoom={zoom} />
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        // Atributo 'attribution' deve ser configurado via opções do TileLayer, não diretamente
-        // Aqui é uma forma simplificada para a versão mais recente do react-leaflet
-        // Veja a documentação para detalhes específicos
-        // attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       <Marker position={center}>
         <Popup>
